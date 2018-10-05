@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import withRoot from '../withRoot';
 import { Line } from 'react-chartjs-2';
-import { BASE_URL } from '../../.env';
+import { BASE_URL } from '../.env';
 
 class Index extends PureComponent {
   state = {
