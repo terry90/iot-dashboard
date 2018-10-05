@@ -1,0 +1,28 @@
+{
+  "name": "iot-dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "main": "src/index.tsx",
+  "dependencies": {
+    "@material-ui/core": "latest",
+    "@types/react": "*",
+    "@types/react-dom": "*",
+    "@types/recharts": "^1.1.0",
+    "chart.js": "^2.7.2",
+    "react": "latest",
+    "react-chartjs-2": "^2.5.7",
+    "react-dom": "latest",
+    "react-scripts-ts": "latest"
+  },
+  "devDependencies": {
+    "@types/jest": "*",
+    "@types/node": "*",
+    "typescript": "latest"
+  },
+  "scripts": {
+    "start": "react-scripts-ts start",
+    "build": "react-scripts-ts build",
+    "test": "react-scripts-ts test --env=jsdom",
+    "eject": "react-scripts-ts eject"
+  }
+}
