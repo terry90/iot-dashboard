@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { Line } from 'react-chartjs-2';
 import ChartTooltip from '../ChartTooltip';
 
-const DATASET_NAMES = ['Temperature', 'Humidity', 'Heat index'];
+const DATASET_NAMES = ['Temperature', 'Heat index', 'Humidity'];
 const MAX_ELEMS = 150;
 
 class EnvSensorChart extends PureComponent<Props> {
