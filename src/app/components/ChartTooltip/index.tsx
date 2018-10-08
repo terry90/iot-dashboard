@@ -33,14 +33,14 @@ class ChartTooltip extends PureComponent<Props> {
         {this.props.tooltip.dataPoints.map((v, i) => (
           <div
             className="ChartTooltip__elem"
-            key={`${this.props.datasetNames[i]}:${v.yLabel}`}
+            key={`${this.props.datasetNames[v.datasetIndex]}:${v.yLabel}`}
           >
             <span
               className="ChartTooltip__color"
               style={{ backgroundColor: colors[i] }}
             />
             <span className="ChartTooltip__type">
-              {this.props.datasetNames[i]}
+              {this.props.datasetNames[v.datasetIndex]}
             </span>
             <span className="ChartTooltip__value">{v.yLabel.toFixed(2)}</span>
           </div>
@@ -56,7 +56,7 @@ interface Props {
   position: { top: number; left: number };
   tooltip: {
     xAlign: string;
-    dataPoints: { yLabel: number; xLabel: string }[];
+    dataPoints: { datasetIndex: number; yLabel: number; xLabel: string }[];
     labelColors: { backgroundColor: string }[];
   };
   datasetNames: string[];
