@@ -1,0 +1,44 @@
+.ChartTooltip {
+  margin-left: 20px;
+  transition: all 0.2s;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid grey;
+  padding: 10px;
+}
+
+.ChartTooltip__xAlign--right {
+  transform: translate(calc(-100% - 40px));
+}
+
+.ChartTooltip span {
+  display: inline-block;
+}
+
+.ChartTooltip__title {
+  margin-bottom: 10px;
+}
+
+.ChartTooltip__elem {
+  display: flex;
+  align-items: center;
+}
+
+.ChartTooltip__type {
+  font-weight: 400;
+  width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ChartTooltip__value {
+  font-weight: 200;
+}
+
+.ChartTooltip__color {
+  margin-right: 10px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  line-height: 20px;
+}

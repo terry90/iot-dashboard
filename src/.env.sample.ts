@@ -1,1 +1,1 @@
-export const BASE_URL = 'http://iot.domain.com/';
+export const BASE_URL = 'https://iot.domain.com/';
