@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { Line } from 'react-chartjs-2';
 import ChartTooltip from '../ChartTooltip';
+import './EnvSensorChart.css';
 
 const DATASET_NAMES = ['Temperature', 'Heat index', 'Humidity'];
 const MAX_ELEMS = 150;
@@ -161,26 +162,29 @@ class EnvSensorChart extends PureComponent<Props> {
   };
 
   render() {
-    const rawData = this.props.data;
-    const data = rawData.map((d: any) => ({
+    const thing = this.props.data || {};
+    const data = thing.iot_datas.map((d: any) => ({
       ...JSON.parse(d.value),
       created_at: d.created_at
     }));
     const datasets = this.getDatasets(data);
     return (
       <div className="EnvSensorChart">
-        <Line
-          ref={ref => (this.chart = ref)}
-          data={datasets}
-          options={this.chartOptions(datasets.datasets)}
-        />
-        {this.state.tooltip && (
-          <ChartTooltip
-            datasetNames={DATASET_NAMES}
-            tooltip={this.state.tooltip}
-            position={this.state.tooltipPosition}
+        <div className="EnvSensorChart__title">{thing.name}</div>
+        <div className="EnvSensorChart__chart">
+          <Line
+            ref={ref => (this.chart = ref)}
+            data={datasets}
+            options={this.chartOptions(datasets.datasets)}
           />
-        )}
+          {this.state.tooltip && (
+            <ChartTooltip
+              datasetNames={DATASET_NAMES}
+              tooltip={this.state.tooltip}
+              position={this.state.tooltipPosition}
+            />
+          )}
+        </div>
       </div>
     );
   }
@@ -189,5 +193,5 @@ class EnvSensorChart extends PureComponent<Props> {
 export default EnvSensorChart;
 
 interface Props {
-  data: any;
+  data: Thing;
 }

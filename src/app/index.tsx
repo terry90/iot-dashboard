@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import withRoot from '../withRoot';
 import { BASE_URL } from '../.env';
-import EnvSensorChart from './components/EnvSensorChart';
+import Charts from './Charts/index';
 
 class Index extends PureComponent {
   state = {
@@ -10,7 +10,7 @@ class Index extends PureComponent {
   };
 
   async componentWillMount() {
-    const response = await fetch(`${BASE_URL}/iot_datas`);
+    const response = await fetch(`${BASE_URL}/things_with_data`);
     const data = await response.json();
     console.log(data);
     this.setState({ loading: false, data });
@@ -19,7 +19,7 @@ class Index extends PureComponent {
   render() {
     return (
       <div className="App">
-        <EnvSensorChart data={this.state.data} />
+        <Charts data={this.state.data} />
       </div>
     );
   }
